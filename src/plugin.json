@@ -1,0 +1,14 @@
+{
+  "name": "Permissions",
+  "version": "1.0",
+  "mainClass": "tk.coolv1994.plugins.perms.Permissions",
+  "commands": {
+    "giveperm": "tk.coolv1994.plugins.perms.commands.GivePerm",
+    "takeperm": "tk.coolv1994.plugins.perms.commands.TakePerm",
+    "loadperms": "tk.coolv1994.plugins.perms.commands.LoadPerms",
+    "saveperms": "tk.coolv1994.plugins.perms.commands.SavePerms"
+  },
+  "events": {
+    "permissions": "tk.coolv1994.plugins.perms.Permissions"
+  }
+}
