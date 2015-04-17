@@ -1,33 +1,20 @@
 package tk.coolv1994.plugins.perms;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import tk.coolv1994.gawdserver.perms.PermissionManager;
-import tk.coolv1994.gawdserver.plugin.Plugin;
+import tk.coolv1994.gawdapi.perms.PermissionManager;
 
 import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Vinnie on 2/2/2015.
+ * Created by Vinnie on 4/16/2015.
  */
-public class Permissions implements Plugin, PermissionManager {
-    private static Permissions manager;
+public class PermManager implements PermissionManager {
     private Groups groups;
     private Players players;
-    private static Gson gson;
 
-    public Permissions() {
-        manager = this;
+    public PermManager() {
         groups = new Groups();
         players = new Players();
-
-        GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting();
-        builder.enableComplexMapKeySerialization();
-        builder.serializeNulls();
-        builder.disableHtmlEscaping();
-        gson = builder.create();
     }
 
     @Override
@@ -94,21 +81,25 @@ public class Permissions implements Plugin, PermissionManager {
         players.putPlayer(username, p);
     }
 
-    public static Permissions getManager() {
-        return manager;
-    }
-
     public void loadPerms() {
         groups = Groups.loadGroups();
         players = Players.loadPlayers();
+
+        // Debug: List players and groups
         try {
             for (Map.Entry<String, Group> e : groups.getGroups().entrySet()) {
-                System.out.println(e.getKey() + " (G)" + e.getValue().toString());
-            }
-            for (Map.Entry<String, Player> e : players.getPlayers().entrySet()) {
-                System.out.println(e.getKey() + " (P)" + e.getValue().toString());
+                System.out.println("[Permissions] Group: " + e.getKey() + " " + e.getValue().toString());
             }
         } catch (Exception e) {
+            System.out.println("[Permissions] Error loading Groups!");
+            e.printStackTrace();
+        }
+        try {
+            for (Map.Entry<String, Player> e : players.getPlayers().entrySet()) {
+                System.out.println("[Permissions] Player: " + e.getKey() + " " + e.getValue().toString());
+            }
+        } catch (Exception e) {
+            System.out.println("[Permissions] Error loading Players!");
             e.printStackTrace();
         }
     }
@@ -116,19 +107,5 @@ public class Permissions implements Plugin, PermissionManager {
     public void savePerms() {
         groups.saveGroups();
         players.savePlayers();
-    }
-
-    @Override
-    public void startup() {
-        loadPerms();
-    }
-
-    @Override
-    public void shutdown() {
-        savePerms();
-    }
-
-    public static Gson getGson() {
-        return gson;
     }
 }

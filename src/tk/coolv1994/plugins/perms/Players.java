@@ -14,17 +14,17 @@ public class Players {
     private final Map<String, Player> players;
 
     public Players() {
-        players = new HashMap<String, Player>();
-        List<String> groups = new ArrayList<String>();
+        players = new HashMap<>();
+        List<String> groups = new ArrayList<>();
         groups.add("OP");
-        List<String> perms = new ArrayList<String>();
+        List<String> perms = new ArrayList<>();
         perms.add("perms.*");
         players.put("CONSOLE", new Player(groups, perms));
     }
 
     public Players(Map<String, Player> players) {
         if (players == null)
-            players = new HashMap<String, Player>();
+            players = new HashMap<>();
         this.players = players;
     }
 
@@ -50,7 +50,7 @@ public class Players {
 
     public static Players loadPlayers() {
         try {
-            return Permissions.getGson().fromJson(new FileReader(playerFile), Players.class);
+            return GawdPerms.getGson().fromJson(new FileReader(playerFile), Players.class);
         } catch (FileNotFoundException e) {
             playerFile.getParentFile().mkdirs();
             Players defaults = new Players();
@@ -63,7 +63,7 @@ public class Players {
         try {
             FileWriter fw = new FileWriter(playerFile);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(Permissions.getGson().toJson(this));
+            bw.write(GawdPerms.getGson().toJson(this));
             bw.close();
         } catch (IOException e) {
             System.out.println("Error saving players.\n" + e.getMessage());

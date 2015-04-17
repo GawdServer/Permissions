@@ -10,12 +10,12 @@ public class Group {
     private List<String> permissions;
 
     public Group() {
-        permissions = new ArrayList<String>();
+        permissions = new ArrayList<>();
     }
 
     public Group(List<String> permissions) {
         if (permissions == null)
-            permissions = new ArrayList<String>();
+            permissions = new ArrayList<>();
         this.permissions = permissions;
     }
 

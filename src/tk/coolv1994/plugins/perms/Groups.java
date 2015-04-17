@@ -14,15 +14,15 @@ public class Groups {
     private final Map<String, Group> groups;
 
     public Groups() {
-        this.groups = new HashMap<String, Group>();
-        List<String> perms = new ArrayList<String>();
+        this.groups = new HashMap<>();
+        List<String> perms = new ArrayList<>();
         perms.add("*");
         groups.put("OP", new Group(perms));
     }
 
     public Groups(Map<String, Group> groups) {
         if (groups == null)
-            groups = new HashMap<String, Group>();
+            groups = new HashMap<>();
         this.groups = groups;
     }
 
@@ -48,7 +48,7 @@ public class Groups {
 
     public static Groups loadGroups() {
         try {
-            return Permissions.getGson().fromJson(new FileReader(groupFile), Groups.class);
+            return GawdPerms.getGson().fromJson(new FileReader(groupFile), Groups.class);
         } catch (FileNotFoundException e) {
             groupFile.getParentFile().mkdirs();
             Groups defaults = new Groups();
@@ -61,7 +61,7 @@ public class Groups {
         try {
             FileWriter fw = new FileWriter(groupFile);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(Permissions.getGson().toJson(this));
+            bw.write(GawdPerms.getGson().toJson(this));
             bw.close();
         } catch (IOException e) {
             System.out.println("Error saving groups.\n" + e.getMessage());

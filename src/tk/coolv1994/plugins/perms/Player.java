@@ -11,16 +11,16 @@ public class Player {
     private List<String> permissions;
 
     public Player() {
-        groups = new ArrayList<String>();
-        permissions = new ArrayList<String>();
+        groups = new ArrayList<>();
+        permissions = new ArrayList<>();
     }
 
     public Player(List<String> groups, List<String> permissions) {
         if (groups == null)
-            groups = new ArrayList<String>();
+            groups = new ArrayList<>();
         this.groups = groups;
         if (permissions == null)
-            permissions = new ArrayList<String>();
+            permissions = new ArrayList<>();
         this.permissions = permissions;
     }
 
