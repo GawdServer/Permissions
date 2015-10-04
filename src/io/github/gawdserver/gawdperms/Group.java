@@ -1,4 +1,4 @@
-package tk.coolv1994.plugins.perms;
+package io.github.gawdserver.gawdperms;
 
 import java.util.ArrayList;
 import java.util.List;

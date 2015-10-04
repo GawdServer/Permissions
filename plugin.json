@@ -1,14 +1,22 @@
 {
   "name": "Permissions",
-  "version": "1.0",
-  "mainClass": "tk.coolv1994.plugins.perms.GawdPerms",
+  "version": "1.1",
+  "mainClass": "io.github.gawdserver.gawdperms.GawdPerms",
   "commands": {
-    "giveperm": "tk.coolv1994.plugins.perms.commands.GivePerm",
-    "takeperm": "tk.coolv1994.plugins.perms.commands.TakePerm",
-    "loadperms": "tk.coolv1994.plugins.perms.commands.LoadPerms",
-    "saveperms": "tk.coolv1994.plugins.perms.commands.SavePerms"
+    "giveplayerperm": "io.github.gawdserver.gawdperms.commands.GivePlayerPerm",
+    "takeplayerperm": "io.github.gawdserver.gawdperms.commands.TakePlayerPerm",
+    "givegroupperm": "io.github.gawdserver.gawdperms.commands.GiveGroupPerm",
+    "takegroupperm": "io.github.gawdserver.gawdperms.commands.TakeGroupPerm",
+    "giveplayergroup": "io.github.gawdserver.gawdperms.commands.GivePlayerGroup",
+    "takeplayergroup": "io.github.gawdserver.gawdperms.commands.TakePlayerGroup",
+    "addgroup": "io.github.gawdserver.gawdperms.commands.AddGroup",
+    "removegroup": "io.github.gawdserver.gawdperms.commands.RemoveGroup",
+    "addplayer": "io.github.gawdserver.gawdperms.commands.AddPlayer",
+    "removeplayer": "io.github.gawdserver.gawdperms.commands.RemovePlayer",
+    "loadperms": "io.github.gawdserver.gawdperms.commands.LoadPerms",
+    "saveperms": "io.github.gawdserver.gawdperms.commands.SavePerms"
   },
   "events": {
-    "permissions": "tk.coolv1994.plugins.perms.PermManager"
+    "permissions": "io.github.gawdserver.gawdperms.PermManager"
   }
 }

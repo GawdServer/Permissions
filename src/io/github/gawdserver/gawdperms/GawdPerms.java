@@ -1,14 +1,19 @@
-package tk.coolv1994.plugins.perms;
+package io.github.gawdserver.gawdperms;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import tk.coolv1994.gawdapi.perms.Permissions;
-import tk.coolv1994.gawdapi.plugin.Plugin;
+import io.github.gawdserver.api.perms.Permissions;
+import io.github.gawdserver.api.plugin.Plugin;
+import io.github.gawdserver.api.plugin.PluginDir;
+
+import java.io.File;
+import java.util.logging.Logger;
 
 /**
  * Created by Vinnie on 2/2/2015.
  */
 public class GawdPerms implements Plugin {
+    public static final Logger logger = Logger.getLogger("Permissions");
     private static PermManager manager;
     private static Gson gson;
 
@@ -31,7 +36,10 @@ public class GawdPerms implements Plugin {
 
     @Override
     public void startup() {
+        File pluginDir = new File(PluginDir.getPluginDir(), "Permissions");
+        pluginDir.mkdirs();
         manager = (PermManager) Permissions.getManager();
+        manager.setPluginDir(pluginDir);
         manager.loadPerms();
     }
 

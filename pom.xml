@@ -2,17 +2,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>tk.coolv1994.plugins</groupId>
-    <artifactId>permissions</artifactId>
-    <version>1.0</version>
+    <groupId>io.github.gawdserver</groupId>
+    <artifactId>gawdperms</artifactId>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>Permissions</name>
     <url>https://github.com/GawdServer/Permissions</url>
 
     <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
     </properties>
 
     <repositories>
@@ -24,9 +24,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>tk.coolv1994</groupId>
-            <artifactId>gawdapi</artifactId>
-            <version>1.0.0</version>
+            <groupId>io.github.gawdserver</groupId>
+            <artifactId>api</artifactId>
+            <version>1.0.4</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -45,6 +45,7 @@
                 <directory></directory>
                 <includes>
                     <include>plugin.json</include>
+                    <include>help.json</include>
                 </includes>
             </resource>
         </resources>

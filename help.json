@@ -1,0 +1,64 @@
+{
+	"commands": {
+		"givegroupperm": {
+			"description": "Give permission to a group.",
+			"usage": "!givegroupperm <group> <permission>",
+			"permission": "perms.givegroupperm"
+		},
+		"giveplayergroup": {
+			"description": "Give group to a player.",
+			"usage": "!giveplayergroup <username> <group>",
+			"permission": "perms.giveplayergroup"
+		},
+		"giveplayerperm": {
+			"description": "Give permission to a player.",
+			"usage": "!giveplayerperm <username> <permission>",
+			"permission": "perms.giveplayerperm"
+		},
+		"takegroupperm": {
+			"description": "Take permission to a group.",
+			"usage": "!takegroupperm <group> <permission>",
+			"permission": "perms.takegroupperm"
+		},
+		"takeplayergroup": {
+			"description": "Take group to a player.",
+			"usage": "!takeplayergroup <username> <group>",
+			"permission": "perms.takeplayergroup"
+		},
+		"takeplayerperm": {
+			"description": "Take permission to a player.",
+			"usage": "!takeplayerperm <username> <permission>",
+			"permission": "perms.takeplayerperm"
+		},
+		"addgroup": {
+		  	"description": "Create a permission group.",
+		   	"usage": "!addgroup <group>",
+		  	"permission": "perms.addgroup"
+		},
+		"removegroup": {
+		  	"description": "Remove a permission group.",
+		  	"usage": "!removegroup <group>",
+		  	"permission": "perms.removegroup"
+		},
+		"addplayer": {
+		  	"description": "Add a permission player.",
+		  	"usage": "!addplayer <username>",
+		  	"permission": "perms.addplayer"
+		},
+		"removeplayer": {
+		  	"description": "Remove a permission player.",
+			"usage": "!removeplayer <username> ",
+		  	"permission": "perms.removeplayer"
+		},
+		"loadperms": {
+			"description": "Reload permissions from config.",
+			"usage": "!loadperms",
+			"permission": "perms.load"
+		},
+		"saveperms": {
+			"description": "Save permissions to config.",
+			"usage": "!saveperms",
+			"permission": "perms.save"
+		}
+	}
+}
